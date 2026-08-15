@@ -33,7 +33,7 @@ public class Spider : MonoBehaviour
                 {
                     if (Ani.GetBool("Attack"))
                     {
-                        r.velocity = new Vector2(0, 0);
+                        r.linearVelocity = new Vector2(0, 0);
                         Ani.SetBool("Attack", false);
                         StopAllCoroutines();
                         StartCoroutine(Jump());
@@ -52,7 +52,7 @@ public class Spider : MonoBehaviour
     {
         if (!UI.Stop)
         {
-            r.velocity = new Vector2(0, 0);
+            r.linearVelocity = new Vector2(0, 0);
             Ani.SetBool("Attack", false);
             StopAllCoroutines();
             StartCoroutine(Jump());

@@ -26,7 +26,7 @@ public class Bat : MonoBehaviour
         {
             if (Attack == 0)
             {
-                RaycastHit2D Hit = Physics2D.Raycast(transform.position, r.velocity * 1.5f, 0.2f);
+                RaycastHit2D Hit = Physics2D.Raycast(transform.position, r.linearVelocity * 1.5f, 0.2f);
                 if (Hit.collider != null)
                 {
                     if (Hit.transform.gameObject.layer == 8)
@@ -106,9 +106,9 @@ public class Bat : MonoBehaviour
             {
                 if (transform.localScale.x > 0)
                 {
-                    Vector2 vel = r.velocity;
+                    Vector2 vel = r.linearVelocity;
                     vel.x = -2.0f;
-                    r.velocity = vel;
+                    r.linearVelocity = vel;
                     if (transform.position.x <= StartPos.x - 5.0f)
                     {
                         SetSide();
@@ -116,9 +116,9 @@ public class Bat : MonoBehaviour
                 }
                 else
                 {
-                    Vector2 vel = r.velocity;
+                    Vector2 vel = r.linearVelocity;
                     vel.x = 2.0f;
-                    r.velocity = vel;
+                    r.linearVelocity = vel;
                     if (transform.position.x >= StartPos.x + 5.0f)
                     {
                         SetSide();

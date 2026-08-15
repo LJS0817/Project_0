@@ -1,0 +1,65 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Tile
+  - Rope
+  - RopeCol
+  - Fire
+  - Monster
+  - Door
+  - Box
+  - Camp
+  - C
+  - Food
+  - Tank
+  - Trap
+  - Spike
+  - Water
+  - InRange
+  - Another
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - Ground
+  - Rope
+  - Hook
+  - MapBlock
+  - MiniMap
+  - Monster
+  - Snake
+  - Fire
+  - Menu
+  - Water
+  - Another
+  - RED
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: UI
+    uniqueID: 1906398791
+    locked: 0
+  - name: Dust
+    uniqueID: 2110485961
+    locked: 0

@@ -59,11 +59,11 @@ public class Hero : MonoBehaviour
 
     void NotMove()
     {
-        if (r.velocity.x != 0)
+        if (r.linearVelocity.x != 0)
         {
-            Vector3 vel = r.velocity;
+            Vector3 vel = r.linearVelocity;
             vel.x = 0;
-            r.velocity = vel;
+            r.linearVelocity = vel;
         }
     }
 
@@ -413,7 +413,7 @@ public class Hero : MonoBehaviour
                 {
                     sound.SoundPlay(Sound.SOUND.JUMP);
                     Jump = 0;
-                    r.velocity = new Vector3(r.velocity.x, 0, 0);
+                    r.linearVelocity = new Vector3(r.linearVelocity.x, 0, 0);
                     SetIdle();
                     Vector3 Pos = new Vector3(collision.contacts[0].point.x, collision.contacts[0].point.y, JumpResetPos.z);
 
@@ -455,7 +455,7 @@ public class Hero : MonoBehaviour
         }
         if (Hit.transform.gameObject.layer == 8 && Jump == 2)
         {
-            r.velocity = new Vector3(r.velocity.x, 0, 0);
+            r.linearVelocity = new Vector3(r.linearVelocity.x, 0, 0);
             Jump = 0;
             SetIdle();
         }
@@ -467,7 +467,7 @@ public class Hero : MonoBehaviour
                 HurtFire.SetActive(true);
                 Jump = 3;
                 ResetAll();
-                r.velocity = new Vector3(0, 0, 0);
+                r.linearVelocity = new Vector3(0, 0, 0);
                 SetAni("Ride");
                 RideRope.position = transform.position;
                 transform.position = RideRope.position;
@@ -480,7 +480,7 @@ public class Hero : MonoBehaviour
         }
         if (Hit.transform.gameObject.layer == 8 && Jump == 3)
         {
-            r.velocity = new Vector3(r.velocity.x, 0, 0);
+            r.linearVelocity = new Vector3(r.linearVelocity.x, 0, 0);
             Jump = 0;
             SetIdle();
         }
@@ -559,7 +559,7 @@ public class Hero : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.LeftControl) && (Input.GetKey(KeyCode.LeftArrow) || Input.GetKey(KeyCode.RightArrow)))
             {
-                r.velocity = Vector3.zero;
+                r.linearVelocity = Vector3.zero;
                 Jump = 1;
                 Fire.SetActive(true);
                 HurtFire.SetActive(false);
@@ -596,9 +596,9 @@ public class Hero : MonoBehaviour
                     Scale.x *= -1;
                     transform.localScale = Scale;
                 }
-                Vector3 vel = r.velocity;
+                Vector3 vel = r.linearVelocity;
                 vel.x = -Speed;
-                r.velocity = vel;
+                r.linearVelocity = vel;
             }
             else if (Input.GetKey(KeyCode.RightArrow))
             {
@@ -616,9 +616,9 @@ public class Hero : MonoBehaviour
                     Scale.x *= -1;
                     transform.localScale = Scale;
                 }
-                Vector3 vel = r.velocity;
+                Vector3 vel = r.linearVelocity;
                 vel.x = Speed;
-                r.velocity = vel;
+                r.linearVelocity = vel;
             }
             else
             {
@@ -636,9 +636,9 @@ public class Hero : MonoBehaviour
             {
                 if (transform.position.y < RopePos)
                 {
-                    Vector3 vel = r.velocity;
+                    Vector3 vel = r.linearVelocity;
                     vel.y = (Speed * 0.5f);
-                    r.velocity = vel;
+                    r.linearVelocity = vel;
                     RideRope.position = transform.position;
                 }
                 else
@@ -650,9 +650,9 @@ public class Hero : MonoBehaviour
             {
                 if (transform.position.y > LastRopePos)
                 {
-                    Vector3 vel = r.velocity;
+                    Vector3 vel = r.linearVelocity;
                     vel.y = -(Speed * 0.5f);
-                    r.velocity = vel;
+                    r.linearVelocity = vel;
                     RideRope.position = transform.position;
                 }
                 else

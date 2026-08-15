@@ -75,15 +75,15 @@ public class Snake : MonoBehaviour
         {
             if (Attack == 0)
             {
-                Vector2 v = r.velocity;
+                Vector2 v = r.linearVelocity;
                 v.x = Dir.x * Speed;
-                r.velocity = v;
+                r.linearVelocity = v;
             }
             else
             {
-                Vector2 v = r.velocity;
+                Vector2 v = r.linearVelocity;
                 v.x = 0;
-                r.velocity = v;
+                r.linearVelocity = v;
             }
         }
     }

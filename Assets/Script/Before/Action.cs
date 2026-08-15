@@ -179,7 +179,7 @@ public class Action : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.RightArrow))
                 {
-                    R.velocity = new Vector3(6, 0, 0);
+                    R.linearVelocity = new Vector3(6, 0, 0);
                     if (S[Index].time <= 0.005f)
                     {
                         Index = Random.Range(1, 4);
@@ -188,7 +188,7 @@ public class Action : MonoBehaviour
                 }
                 else
                 {
-                    R.velocity = Vector3.zero;
+                    R.linearVelocity = Vector3.zero;
                 }
             }
         }
